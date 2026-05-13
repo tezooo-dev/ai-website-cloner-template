@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const afFoundry = localFont({
+  src: "../fonts/af.woff2",
+  variable: "--font-af-foundary",
+  weight: "100 900",
+  display: "swap",
+});
+
+const ppMondwest = localFont({
+  src: "../fonts/ppmondwest.woff2",
+  variable: "--font-mondwest",
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -13,8 +22,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "General Intelligence Company",
+  description:
+    "Automate your life with natural language. Cofounder plugs into your existing tools, writes automations, and organizes workflows.",
+  icons: {
+    icon: [
+      { url: "/images/favicon32.png", sizes: "32x32" },
+      { url: "/images/favicon256.png", sizes: "256x256" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +41,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${afFoundry.variable} ${ppMondwest.variable} ${geistMono.variable} antialiased bg-neutral-50`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
