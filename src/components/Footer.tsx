@@ -15,7 +15,7 @@ export function Footer() {
   return (
     <footer className="w-full mb-[400px] xl:mb-[500px] bg-white">
       {/* Main content area */}
-      <div className="px-6 md:px-12 lg:px-24 xl:px-32 pt-12 pb-8 flex flex-col gap-8">
+      <div className="px-6 md:px-12 lg:px-24 xl:px-32 pt-12 pb-8 flex flex-col gap-8 items-center text-center">
         {/* Heading + tagline */}
         <div className="flex flex-col gap-3 max-w-2xl">
           <h2 className="font-mondwest text-2xl md:text-3xl leading-tight">
@@ -33,7 +33,7 @@ export function Footer() {
         </div>
 
         {/* Nav links row */}
-        <nav className="flex flex-wrap gap-4 md:gap-6">
+        <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
           {NAV_LINKS.map(({ label, href }) => (
             <Link
               key={label}
@@ -46,7 +46,7 @@ export function Footer() {
         </nav>
 
         {/* Email signup */}
-        <div className="flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 max-w-[320px]">
+        <div className="flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 w-full max-w-[320px]">
           <input
             type="email"
             placeholder="Get updates in your inbox"

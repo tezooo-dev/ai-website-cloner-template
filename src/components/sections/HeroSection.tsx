@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { ArrowIcon, ClockIcon } from "@/components/icons";
+import { useNYCTimeTint } from "@/hooks/useNYCTimeTint";
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
   const [time, setTime] = useState<string>("");
+  const tint = useNYCTimeTint();
 
   // Parallax scroll listener
   useEffect(() => {
@@ -38,6 +40,15 @@ export function HeroSection() {
           backgroundImage: "url('/images/spring-hero-2.avif')",
           transform: `translateY(${scrollY * 0.3}px)`,
           willChange: "transform",
+        }}
+      />
+
+      {/* NYC time-of-day tint */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundColor: tint,
+          transition: "background-color 2s ease",
         }}
       />
 
