@@ -5,12 +5,12 @@ import { FixedBottomImage } from "@/components/FixedBottomImage";
 import { ColorStripe } from "@/components/ColorStripe";
 import { AboutHeroSection } from "@/components/sections/AboutHeroSection";
 import { MissionTextSection } from "@/components/sections/MissionTextSection";
-import { NYCPhotoSection } from "@/components/sections/NYCPhotoSection";
+import { GlobalDeliveryPhotoSection } from "@/components/sections/GlobalDeliveryPhotoSection";
 
 export const metadata: Metadata = {
-  title: "About — General Intelligence Company",
+  title: "About Tezooo Innovations | Canada-Led AI & Software Company",
   description:
-    "Our mission is to enable the one-person one-billion dollar company. Founded in January 2025 by Andrew Pignanelli and Abhishyant Khare.",
+    "Learn about Tezooo Innovations Inc. and Tezooo Innovations Pvt Ltd, a Canada-led and India-powered AI, automation, and software development company.",
 };
 
 export default function AboutPage() {
@@ -20,7 +20,7 @@ export default function AboutPage() {
       <AboutHeroSection />
       <ColorStripe />
       <MissionTextSection />
-      <NYCPhotoSection />
+      <GlobalDeliveryPhotoSection />
       <Footer />
       <FixedBottomImage />
     </>

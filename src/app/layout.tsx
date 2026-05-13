@@ -22,9 +22,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "General Intelligence Company",
+  title: "Tezooo Innovations | AI Services, Automation & Software Development",
   description:
-    "Automate your life with natural language. Cofounder plugs into your existing tools, writes automations, and organizes workflows.",
+    "Tezooo Innovations helps companies and small business owners build practical AI automation, AI agents, custom software, web apps, POS integrations, and cloud platforms.",
   icons: {
     icon: [
       { url: "/images/favicon32.png", sizes: "32x32" },

@@ -5,34 +5,34 @@ interface Principle {
 
 const principles: Principle[] = [
   {
-    title: "Cycle Time",
+    title: "Business First",
     description:
-      "Ship fast. The shorter the feedback loop, the faster we learn and improve.",
+      "Start with the workflow, customer need, and business outcome before choosing tools.",
   },
   {
-    title: "Intense Focus",
+    title: "Clean Engineering",
     description:
-      "Work on the things that matter most. Say no to everything else.",
+      "Build systems that are maintainable, understandable, and ready for real operations.",
   },
   {
-    title: "Speed Over Everything",
+    title: "Practical AI",
     description:
-      "Bias towards action. A good decision made quickly beats a perfect one made slowly.",
+      "Use AI where it improves speed, clarity, response quality, or decision support.",
   },
   {
-    title: "Delete the Part",
+    title: "Founder-Led Accountability",
     description:
-      "The best feature is no feature. Simplify ruthlessly before adding complexity.",
+      "Keep communication direct, project scope clear, and delivery tied to visible progress.",
   },
   {
-    title: "Own the Outcome",
+    title: "Long-Term Support",
     description:
-      "Take full responsibility. If something is broken, fix it regardless of whose fault it is.",
+      "Plan for launch, iteration, maintenance, and the operational realities after handoff.",
   },
   {
-    title: "Build in Public",
+    title: "Honest Guidance",
     description:
-      "Share your work early and often. Transparency creates accountability and trust.",
+      "Recommend automation when it helps, and simpler software when AI is not required.",
   },
 ];
 
@@ -41,7 +41,7 @@ export function PrinciplesSection() {
     <section className="bg-[#FEFFFC] py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-5xl mx-auto">
         <p className="font-af text-neutral-600 text-[15px] uppercase tracking-wide mb-8">
-          Here&apos;s how we develop great products:
+          How Tezooo approaches the work
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -174,7 +174,7 @@ export function XIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Minimal clock icon — used in hero NYC time display */
+/** Minimal clock icon retained for cloned icon compatibility */
 export function ClockIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -198,7 +198,7 @@ export function ClockIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Pixel-art chat bubble — used in Cofounder section notification mock */
+/** Pixel-art chat bubble retained for cloned icon compatibility */
 export function ChatIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -233,7 +233,7 @@ export function ChatIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Two-star sparkle — used in Cofounder section header badge */
+/** Two-star sparkle retained for cloned icon compatibility */
 export function SparkleIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg

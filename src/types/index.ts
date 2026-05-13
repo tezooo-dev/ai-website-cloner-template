@@ -1,4 +1,9 @@
-export type ArticleCategory = "Announcements" | "Optimization" | "Research";
+export type ArticleCategory =
+  | "AI Automation"
+  | "AI Agents"
+  | "Business Automation"
+  | "Software"
+  | "Restaurant Technology";
 
 export interface Article {
   id: string;

@@ -11,9 +11,12 @@ interface MobileNavDrawerProps {
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Process", href: "/#process" },
   { label: "About", href: "/about" },
-  { label: "Writing", href: "/writing" },
-  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function MobileNavDrawer({ open, onClose }: MobileNavDrawerProps) {
@@ -25,7 +28,6 @@ export function MobileNavDrawer({ open, onClose }: MobileNavDrawerProps) {
         "block lg:hidden fixed top-0 right-0 z-[100] w-full h-dvh pointer-events-none",
       )}
     >
-      {/* Backdrop */}
       <div
         className={cn(
           "absolute inset-0 bg-black/40 transition-opacity duration-[250ms] pointer-events-auto",
@@ -35,7 +37,6 @@ export function MobileNavDrawer({ open, onClose }: MobileNavDrawerProps) {
         aria-hidden="true"
       />
 
-      {/* Drawer panel */}
       <div
         className={cn(
           "absolute top-0 right-0 w-full h-full bg-[#F9FAF7] flex flex-col pointer-events-auto",
@@ -46,7 +47,6 @@ export function MobileNavDrawer({ open, onClose }: MobileNavDrawerProps) {
         aria-modal="true"
         aria-label="Navigation menu"
       >
-        {/* Close button */}
         <div className="flex justify-end p-4 pt-5 pr-5">
           <button
             onClick={onClose}
@@ -70,11 +70,10 @@ export function MobileNavDrawer({ open, onClose }: MobileNavDrawerProps) {
           </button>
         </div>
 
-        {/* Nav links */}
         <nav className="flex flex-col px-8 pt-8 gap-2 flex-1">
           {NAV_LINKS.map(({ label, href }) => {
             const isActive =
-              href === "/" ? pathname === "/" : pathname.startsWith(href);
+              href === "/" ? pathname === "/" : pathname.startsWith(href.split("#")[0]);
             return (
               <Link
                 key={href}
@@ -91,9 +90,8 @@ export function MobileNavDrawer({ open, onClose }: MobileNavDrawerProps) {
           })}
         </nav>
 
-        {/* Copyright */}
         <div className="px-8 pb-8 text-xs text-neutral-500">
-          © The General Intelligence Company of New York 2026
+          (c) Tezooo Innovations 2026
         </div>
       </div>
     </div>

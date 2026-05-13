@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { FixedBottomImage } from "@/components/FixedBottomImage";
@@ -12,88 +14,60 @@ import type { Article, ArticleCategory } from "@/types";
 type FilterCategory = "All" | ArticleCategory;
 
 const allArticles: Article[] = [
-  // Announcements (2)
   {
     id: "1",
-    title: "An Update on Cofounder 1",
-    category: "Announcements",
-    author: "Andrew Pignanelli",
-    slug: "cofounder-1-sunset-blue",
-    thumbnail: "/images/posts/cofounder-1-sunset-blue.png",
-    date: "2025",
+    title: "What Is AI Automation for Small Businesses?",
+    category: "AI Automation",
+    author: "Tezooo Innovations",
+    slug: "ai-automation-for-small-business",
+    thumbnail: "/images/tezooo-automation-architecture.png",
+    date: "Guide",
+  },
+  {
+    id: "2",
+    title: "How AI Agents Help Business Owners Save Time",
+    category: "AI Agents",
+    author: "Tezooo Innovations",
+    slug: "how-ai-agents-help-businesses",
+    thumbnail: "/images/tezooo-global-delivery.png",
+    date: "Guide",
   },
   {
     id: "3",
-    title: "Announcing Cofounder 1.5 and our $8.7 Million Seed Round",
-    category: "Announcements",
-    author: "Andrew Pignanelli",
-    slug: "cofounder-1-5-and-8-7-million-seed",
-    thumbnail: "/images/posts/cofounder-1.5-and-8.7-million-seed.png",
-    date: "2025",
+    title: "How to Choose the First Workflow to Automate",
+    category: "Business Automation",
+    author: "Tezooo Innovations",
+    slug: "first-workflow-to-automate",
+    thumbnail: "/images/tezooo-spring-hero.png",
+    date: "Guide",
   },
-  // Research (3)
-  {
-    id: "2",
-    title: "Agent-Native Engineering",
-    category: "Research",
-    author: "Andrew Pignanelli",
-    slug: "agent-native-engineering",
-    thumbnail: "/images/posts/agent-native-engineering/agent-native-engineering.png",
-    date: "2025",
-  },
-  {
-    id: "7",
-    title: "Lessons from Shipping Cofounder",
-    category: "Research",
-    author: "Andrew Pignanelli",
-    slug: "lessons-shipping-cofounder",
-    thumbnail: "/images/posts/cofounder-1-sunset-blue.png",
-    date: "2025",
-  },
-  {
-    id: "8",
-    title: "What We Learned About Multi-Agent Systems",
-    category: "Research",
-    author: "Andrew Pignanelli",
-    slug: "multi-agent-systems",
-    thumbnail: "/images/posts/agent-native-engineering/agent-native-engineering.png",
-    date: "2025",
-  },
-  // Optimization (3)
   {
     id: "4",
-    title: "How We Cut Latency by 10x",
-    category: "Optimization",
-    author: "Andrew Pignanelli",
-    slug: "cut-latency-10x",
-    thumbnail: "/images/posts/cofounder-1-sunset-blue.png",
-    date: "2025",
+    title: "Why Custom Software Still Matters in the AI Era",
+    category: "Software",
+    author: "Tezooo Innovations",
+    slug: "custom-software-in-ai-era",
+    thumbnail: "/images/tezooo-footer-spring.png",
+    date: "Guide",
   },
   {
     id: "5",
-    title: "Building Reliable Agent Pipelines",
-    category: "Optimization",
-    author: "Andrew Pignanelli",
-    slug: "reliable-agent-pipelines",
-    thumbnail: "/images/posts/agent-native-engineering/agent-native-engineering.png",
-    date: "2025",
-  },
-  {
-    id: "6",
-    title: "The Art of Prompt Engineering",
-    category: "Optimization",
-    author: "Andrew Pignanelli",
-    slug: "prompt-engineering",
-    thumbnail: "/images/posts/cofounder-1.5-and-8.7-million-seed.png",
-    date: "2025",
+    title: "How Restaurants Can Use AI Automation",
+    category: "Restaurant Technology",
+    author: "Tezooo Innovations",
+    slug: "restaurant-ai-automation",
+    thumbnail: "/images/tezooo-automation-architecture.png",
+    date: "Guide",
   },
 ];
 
 const FILTER_TABS: { label: FilterCategory; count: number }[] = [
-  { label: "All", count: 8 },
-  { label: "Announcements", count: 2 },
-  { label: "Optimization", count: 3 },
-  { label: "Research", count: 3 },
+  { label: "All", count: 5 },
+  { label: "AI Automation", count: 1 },
+  { label: "AI Agents", count: 1 },
+  { label: "Business Automation", count: 1 },
+  { label: "Software", count: 1 },
+  { label: "Restaurant Technology", count: 1 },
 ];
 
 export default function WritingPage() {
@@ -110,52 +84,43 @@ export default function WritingPage() {
     <>
       <Nav />
 
-      {/* Section 1: Featured Article */}
       <section className="bg-[#FEFFFC] pt-32 pb-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          {/* Quill icon */}
-          <div className="flex justify-center mb-6">
-            <span className="text-4xl select-none" role="img" aria-label="Writing">
-              ✍️
-            </span>
-          </div>
-
-          {/* Featured article card */}
-          <div className="relative rounded-3xl overflow-hidden bg-blue-50 min-h-[400px]">
-            <img
+          <div className="relative rounded-3xl overflow-hidden bg-blue-50 h-[400px] lg:h-[500px]">
+            <Image
               src={featuredArticle.thumbnail}
               alt={featuredArticle.title}
-              className="w-full h-[400px] lg:h-[500px] object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 960px"
             />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-            {/* Article info */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <span className="text-white/70 text-sm uppercase tracking-wide mb-2 block font-af">
-                {featuredArticle.category}
+                Tezooo Insights
               </span>
-              <h1 className="font-mondwest text-white text-[clamp(1.5rem,4vw,3rem)] leading-[115%] mb-4 max-w-2xl">
-                {featuredArticle.title}
+              <h1 className="font-mondwest text-white text-[clamp(1.75rem,4vw,3.25rem)] leading-[115%] mb-4 max-w-2xl">
+                Practical writing on AI, automation, software, and business workflows.
               </h1>
-              <p className="text-white/70 text-sm mb-6 font-af">
-                by {featuredArticle.author}
+              <p className="text-white/75 text-sm mb-6 font-af max-w-xl">
+                Topic ideas and educational guides for small businesses,
+                founders, restaurants, retail teams, and operators planning AI
+                systems.
               </p>
-              <a
-                href={`/writing/${featuredArticle.slug}`}
+              <Link
+                href="/#contact"
                 className="inline-flex items-center gap-2 bg-white text-[#2c2c2c] rounded-lg px-5 py-2.5 text-[15px] font-medium hover:bg-neutral-100 transition-colors group"
               >
-                Read article
+                Discuss a Project
                 <ArrowIcon className="group-hover:animate-[slideOut_0.8s_linear_infinite]" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Article Grid with Filter Tabs */}
       <section className="border-t border-neutral-300 bg-[#FEFFFC] py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
-          {/* Filter Tabs */}
           <div className="flex gap-3 mb-8 flex-wrap">
             {FILTER_TABS.map(({ label, count }) => (
               <button
@@ -165,7 +130,7 @@ export default function WritingPage() {
                   "px-4 py-1.5 rounded-full text-[14px] font-medium border transition-all duration-200 font-af",
                   activeFilter === label
                     ? "bg-[#2c2c2c] text-white border-[#2c2c2c]"
-                    : "bg-white text-[#646464] border-neutral-300 hover:border-neutral-600"
+                    : "bg-white text-[#646464] border-neutral-300 hover:border-neutral-600",
                 )}
               >
                 {label} {count}
@@ -173,7 +138,6 @@ export default function WritingPage() {
             ))}
           </div>
 
-          {/* Article Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredArticles.map((article) => (
               <ArticleCard key={article.id} article={article} />

@@ -11,7 +11,7 @@ interface ArticleCardProps {
 export function ArticleCard({ article, className }: ArticleCardProps) {
   return (
     <Link
-      href={`/writing/${article.slug}`}
+      href={`/writing#${article.slug}`}
       className={cn(
         "group flex flex-col rounded-2xl overflow-hidden bg-white border border-neutral-100",
         "hover:shadow-md transition-shadow duration-200",
@@ -37,7 +37,7 @@ export function ArticleCard({ article, className }: ArticleCardProps) {
         </span>
 
         {/* Title */}
-        <h3 className="font-mondwest text-[#2c2c2c] text-lg leading-snug">
+        <h3 id={article.slug} className="font-mondwest text-[#2c2c2c] text-lg leading-snug">
           {article.title}
         </h3>
 

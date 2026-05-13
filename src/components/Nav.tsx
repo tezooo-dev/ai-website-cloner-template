@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { LogoDark, LogoLight, ArrowIcon } from "@/components/icons";
+import { ArrowIcon } from "@/components/icons";
 import { MobileNavDrawer } from "@/components/MobileNavDrawer";
 
 const NAV_LINKS = [
+  { label: "Services", href: "/#services" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Process", href: "/#process" },
   { label: "About", href: "/about" },
-  { label: "Writing", href: "/writing" },
-  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Nav() {
@@ -21,11 +24,13 @@ export function Nav() {
       >
         <div className="flex gap-6 items-center px-5 py-3 lg:px-3 lg:py-2 w-full justify-between">
           {/* Logo */}
-          <Link href="/" aria-label="General Intelligence Company">
-            <div className="relative w-[35px] h-[34px]">
-              <LogoDark className="absolute inset-0 opacity-0 transition-opacity duration-[250ms]" />
-              <LogoLight className="absolute inset-0 opacity-100 transition-opacity duration-[250ms]" />
-            </div>
+          <Link href="/" aria-label="Tezooo Innovations" className="flex items-center gap-2">
+            <span className="grid size-8 place-items-center rounded-lg bg-[#1F1F29] text-white font-mondwest text-lg">
+              T
+            </span>
+            <span className="hidden sm:block whitespace-nowrap font-af text-[15px] font-semibold tracking-[-0.15px] text-foreground">
+              Tezooo Innovations
+            </span>
           </Link>
 
           {/* Desktop nav links */}
@@ -43,15 +48,14 @@ export function Nav() {
 
           {/* Right side */}
           <div className="flex gap-4 items-center lg:gap-6">
-            {/* Get Cofounder CTA */}
-            <a href="https://cofounder.co" target="_blank" rel="noopener noreferrer">
+            <Link href="/#contact">
               <button className="inline-flex items-center justify-center whitespace-nowrap font-medium cursor-pointer group border border-[#282834] rounded-lg gap-2 text-white hover:opacity-90 transition-opacity h-9 px-4 py-2 has-[>svg]:px-3 text-[15px] tracking-[-0.15px] leading-[140%] bg-[#1F1F29]">
                 <div className="flex items-center justify-center w-3 h-4 pl-[2.5px] pr-[1.5px] py-0 rounded-[50.496px] border border-white/20">
                   <ArrowIcon className="group-hover:animate-[slideOut_0.8s_linear_infinite]" />
                 </div>
-                Get Cofounder
+                Book Consultation
               </button>
-            </a>
+            </Link>
 
             {/* Mobile hamburger */}
             <button

@@ -10,9 +10,9 @@ import { CofoundrSection } from "@/components/sections/CofoundrSection";
 import { WritingSection } from "@/components/sections/WritingSection";
 
 export const metadata: Metadata = {
-  title: "General Intelligence Company",
+  title: "Tezooo Innovations | AI Services, Automation & Software Development",
   description:
-    "We are building the tools and infrastructure for AI-native businesses — starting with Cofounder, an AI agent that automates your business operations.",
+    "Tezooo Innovations helps companies and small businesses build practical AI automation, AI agents, custom software, web apps, POS integrations, and cloud platforms.",
 };
 
 export default function HomePage() {

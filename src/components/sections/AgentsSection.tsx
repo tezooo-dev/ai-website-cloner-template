@@ -10,20 +10,20 @@ interface AgentState {
 
 const AGENT_STATES: AgentState[] = [
   {
-    title: "Isolated systems",
-    description: "Today, businesses run on disconnected software.",
+    title: "Manual follow-ups",
+    description: "Leads, messages, reports, and admin work sit in separate tools.",
   },
   {
-    title: "Scaling agents",
-    description: "AI agents connect to your tools and complete tasks.",
+    title: "Connected workflows",
+    description: "Automation links CRM, email, calendars, payments, forms, and internal data.",
   },
   {
-    title: "Coordinating agents",
-    description: "Multiple agents coordinate across workflows.",
+    title: "AI-assisted teams",
+    description: "Agents answer routine questions, qualify leads, summarize work, and hand off clearly.",
   },
   {
-    title: "Automating organizations",
-    description: "Entire business functions run autonomously.",
+    title: "Clearer operations",
+    description: "Owners and teams get faster responses, cleaner reporting, and fewer repetitive tasks.",
   },
 ];
 
@@ -234,19 +234,9 @@ function DiagramAutomating() {
       ))}
       {/* Center background circle */}
       <circle cx={cx} cy={cy} r="30" fill="#2c2c2c" />
-      {/* GIC sunrise logo mark — inline paths centered at (cx, cy) */}
-      <g transform={`translate(${cx - 16}, ${cy - 16})`} stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none">
-        {/* Horizon line */}
-        <line x1="2" y1="20" x2="30" y2="20" />
-        {/* Sun rays */}
-        <line x1="16" y1="5" x2="16" y2="8" />
-        <line x1="22.5" y1="7.5" x2="20.5" y2="9.5" />
-        <line x1="9.5" y1="7.5" x2="11.5" y2="9.5" />
-        <line x1="26" y1="13" x2="23.5" y2="13.5" />
-        <line x1="6" y1="13" x2="8.5" y2="13.5" />
-        {/* Sun semicircle */}
-        <path d="M9 20 A7 7 0 0 1 23 20" />
-      </g>
+      <text x={cx} y={cy + 8} textAnchor="middle" fill="white" fontSize="26" fontWeight="700">
+        T
+      </text>
     </svg>
   );
 }
@@ -317,7 +307,7 @@ export function AgentsSection() {
   };
 
   return (
-    <section className="relative bg-[#FEFFFC]">
+    <section id="solutions" className="relative bg-[#FEFFFC]">
       {/* Sticky viewport — stays fixed while sentinels scroll past */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
